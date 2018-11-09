@@ -1,10 +1,25 @@
 import std.stdio;
 import std.algorithm;
 import std.range;
+import std.random;
+
+int timesten(int x) {
+  return x*10;
+}
 
 void main() {
   // Let's get going!
   writeln("Hello World!");
+  string msg;
+
+  // Errors as expected since uniform is not constant
+  // static if (timesten(uniform(int.min, int.max)) == 10) {
+  static if (timesten(1+2-1-1) == 10) {
+    msg = "True";
+  } else {
+    msg = "False";
+  }
+  writeln(msg);
 
   // An example for experienced programmers:
   // Take three arrays, and without allocating
